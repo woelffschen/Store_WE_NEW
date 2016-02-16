@@ -24,6 +24,7 @@
     <div class="col-lg-9">
       <%= bootstrap_flash %>
       <%= yield %>
+      <%= link_to "#{current_shopping_list.shopping_items.size} Items in Cart ( #{number_to_currency current_shopping_list.subtotal} )", cart_path, class: "btn btn-link" %>
     </div>
     </div><!--/span-->
   </div><!--/row-->
