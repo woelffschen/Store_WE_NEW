@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-  def new
+    has_many :orders
 
-  end
+
 end

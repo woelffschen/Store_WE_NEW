@@ -34,9 +34,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Benutzeranmeldung
 gem 'devise'
+gem 'devise-bootstrap-views'
 
 # Navigation
 gem 'bootstrap-sass'
+gem 'twitter-bootstrap-rails'
+
+# Rollenverwaltung
+gem 'rolify'
+
 
 
 
