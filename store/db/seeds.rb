@@ -27,3 +27,7 @@ Article.create(:title => 'Nummer 3',
                :colour => 0,
                :size => 4,
                :price => 43.75)
+
+User.create({"email"=>"admin@toys.de", "password"=>"12345678", "admin"=>"true", "first_name"=>"Admin"})
+User.create({"email"=>"ines@toys.de", "password"=>"12345678", "admin"=>"false", "first_name"=>"Ines"})
+User.create({"email"=>"sylvia@toys.de", "password"=>"12345678", "admin"=>"false", "first_name"=>"Sylvia"})
