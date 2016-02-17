@@ -10,13 +10,13 @@
 
         <div class="col-sm-6 col-md-4">
           <div class="thumbnail">
-            <td><%= image_tag(article.image_url, :class => "img-responsive") %></td>
+            <td><%= image_tag(article.image_url, :class => "img-responsive")%></td>
             <div class="caption">
               <h3><%= link_to article.title, article %></h3>
-              <p><%= truncate(strip_tags(article.description))%></p>
-
-              <p><a href="/cart/<%= article.id %>"> Warenkorb </a></p>
-              <a href="#" class="btn btn-primary" role="button">Add to Wishlist</a></p>
+              <p> Description: <%= truncate(strip_tags(article.description))%></p>
+              <p> Size: <%= article.size %></p>
+              <p> Colour: <%= article.colour %></p>
+              <p><a href="/cart/<%=article.id%>" class="btn btn-primary<" role="button"> Add to cart </a></p>
               <p>
                 <% if current_user.try(:admin?) %>
                 <%= link_to 'Edit', edit_article_path(article) %>

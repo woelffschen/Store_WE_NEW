@@ -4,38 +4,30 @@
 # Articles
 Article.delete_all
 
-Article.create(:title => 'Nummer 1',
+Article.create(:title => 'Ball',
                :description =>
-                   %{<p>Versuch 1</p>},
-               :image_url =>   '/images/wd4d.jpg',
+                   %{small dogs},
+               :image_url =>   'http://katzenzubehor.tk/Spielzeug%20fur%20hunde1.jpg',
                :colour => 1,
                :size => 2,
-               :price => 42.95,
+               :price => 5.50,
               :active => true)
 # . . .
-Article.create(:title => 'Nummer 2',
+Article.create(:title => 'Frisbee',
                :description =>
-                   %{<p>Versuch 2</p>},
-               :image_url => '/images/ruby.jpg',
+                   %{big dogs},
+               :image_url => 'http://hahasforhoohas.com/wp-content/uploads/frisbee.jpg',
                :colour => 2,
                :size => 3,
-               :price => 49.50, :active => true)
+               :price => 3.95, :active => true)
 # . . .
-
-Article.create(:title => 'Nummer 3',
+Article.create(:title => 'Bone',
                :description =>
-                   %{<p>Versuch 3</p>},
-               :image_url => '/images/rtp.jpg',
+                   %{feed},
+               :image_url => 'https://www.schecker.de/$WS/schecker/websale8_shop-schecker/produkte/medien/bilder/gross/059204_1548.jpg',
                :colour => 0,
                :size => 4,
-               :price => 43.75, :active => true)
-
-# OrderStatus
-OrderStatus.delete_all
-OrderStatus.create! id: 1, name: "In Progress"
-OrderStatus.create! id: 2, name: "Placed"
-OrderStatus.create! id: 3, name: "Shipped"
-OrderStatus.create! id: 4, name: "Cancelled"
+               :price => 1.50, :active => true)
 
 
 # User
