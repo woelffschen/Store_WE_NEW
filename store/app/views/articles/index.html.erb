@@ -16,7 +16,7 @@
               <p> Description: <%= truncate(strip_tags(article.description))%></p>
               <p> Size: <%= article.size %></p>
               <p> Colour: <%= article.colour %></p>
-              <p><%= button_to 'add to cart', line_items_path(:article_id => article) %></p>
+              <p> <a href="/cart/<%=article.id%>" class="btn btn-primary" role="button"> Add to cart</a></p>
               <p>
                 <% if current_user.try(:admin?) %>
                 <%= link_to 'Edit', edit_article_path(article) %>

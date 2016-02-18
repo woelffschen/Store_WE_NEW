@@ -30,10 +30,4 @@
 
 </ul>
 
-<%= button_to "Checkout", new_order_path, :method => :get %>
-<ul>
-  <% @cart.line_items.each do |item| %>
-    <li><%= item.article.title %></li>
-  <% end %>
-</ul>
 

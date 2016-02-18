@@ -11,16 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217155808) do
-
-  create_table "addresses", force: :cascade do |t|
-    t.string   "street"
-    t.string   "number"
-    t.string   "city"
-    t.integer  "postelCode"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20160217155349) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -34,40 +25,7 @@ ActiveRecord::Schema.define(version: 20160217155808) do
     t.boolean  "active"
   end
 
-  create_table "bank_accounts", force: :cascade do |t|
-    t.string   "iban"
-    t.string   "bic"
-    t.string   "owner"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "carts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "line_items", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "quantity"
-    t.decimal  "price"
-    t.decimal  "total"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.string   "name"
-    t.text     "address"
-    t.string   "email"
-    t.string   "pay_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -82,13 +40,6 @@ ActiveRecord::Schema.define(version: 20160217155808) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
-
-  create_table "shipping_methods", force: :cascade do |t|
-    t.string   "logistics"
-    t.decimal  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
