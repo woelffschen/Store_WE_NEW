@@ -7,6 +7,7 @@ Article.delete_all
 Article.create(:title => 'Ball',
                :description =>
                    %{small dogs},
+               :category => 'Katze',
                :image_url =>   'http://katzenzubehor.tk/Spielzeug%20fur%20hunde1.jpg',
                :colour => 1,
                :size => 2,
@@ -16,14 +17,17 @@ Article.create(:title => 'Ball',
 Article.create(:title => 'Frisbee',
                :description =>
                    %{big dogs},
+               :category => 'Hund',
                :image_url => 'http://hahasforhoohas.com/wp-content/uploads/frisbee.jpg',
                :colour => 2,
                :size => 3,
-               :price => 3.95, :active => true)
+               :price => 3.95,
+               :active => true)
 # . . .
 Article.create(:title => 'Bone',
                :description =>
                    %{feed},
+               :category => 'großer Hund',
                :image_url => 'https://www.schecker.de/$WS/schecker/websale8_shop-schecker/produkte/medien/bilder/gross/059204_1548.jpg',
                :colour => 0,
                :size => 4,

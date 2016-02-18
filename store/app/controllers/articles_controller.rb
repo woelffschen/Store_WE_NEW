@@ -15,6 +15,8 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    #@article_list = @article.group_by { |t| t.category.name }
+
   end
 
   # GET /articles/1/edit
