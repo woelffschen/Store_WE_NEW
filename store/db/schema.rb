@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216151856) do
+ActiveRecord::Schema.define(version: 20160217155808) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "street"
@@ -42,6 +42,11 @@ ActiveRecord::Schema.define(version: 20160216151856) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -49,36 +54,23 @@ ActiveRecord::Schema.define(version: 20160216151856) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "order_items", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "order_id"
-    t.decimal  "unit_price",  precision: 12, scale: 3
+  create_table "line_items", force: :cascade do |t|
+    t.string   "title"
     t.integer  "quantity"
-    t.decimal  "total_price", precision: 12, scale: 3
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-  end
-
-  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id"
-  add_index "order_items", ["product_id"], name: "index_order_items_on_product_id"
-
-  create_table "order_statuses", force: :cascade do |t|
-    t.string   "name"
+    t.decimal  "price"
+    t.decimal  "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.decimal  "subtotal",        precision: 12, scale: 3
-    t.decimal  "tax",             precision: 12, scale: 3
-    t.decimal  "shipping",        precision: 12, scale: 3
-    t.decimal  "total",           precision: 12, scale: 3
-    t.integer  "order_status_id"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.string   "name"
+    t.text     "address"
+    t.string   "email"
+    t.string   "pay_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -94,24 +86,6 @@ ActiveRecord::Schema.define(version: 20160216151856) do
   create_table "shipping_methods", force: :cascade do |t|
     t.string   "logistics"
     t.decimal  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shopping_carts", force: :cascade do |t|
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "shoppingList_id"
-  end
-
-  create_table "shopping_items", force: :cascade do |t|
-    t.integer  "quantity"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "shoppingList_id"
-  end
-
-  create_table "shopping_lists", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -5,16 +5,16 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   helper_method :current_order
 
-  def current_order
-    if !session[:order_id].nil?
-      Order.find(session[:order_id])
-    else
-      Order.new
+  private
+  def current_cart
+    Cart.find (session[:cart_id])
+  rescue ActiveRecord::RecordNotFound
+    cart = Cart.create
+    session[:cart_id] = cart.id
+    cart
     end
-  end
 
   protected
-
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) <<:first_name
     devise_parameter_sanitizer.for(:sign_up) <<:last_name

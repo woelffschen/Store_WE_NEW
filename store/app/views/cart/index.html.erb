@@ -19,7 +19,7 @@
     <p> Description: <%= article.description %></p>
     <p> <%= image_tag(article.image_url, :class => "img-responsive", :size => "150x50")%> </p>
     <p> Price: <%= number_to_currency(article.price, :unit => '€') %> </p>
-    <p> Quantitiy: <%= quantity %> </p>
+    <p> Quantity: <%= quantity %> </p>
   </li>
   <% total += quantity * article.price %>
 
@@ -28,5 +28,12 @@
 <br>
 <p><b> Total: <%= number_to_currency(total, :unit => '€') %> </b></p>
 
+</ul>
+
+<%= button_to "Checkout", new_order_path, :method => :get %>
+<ul>
+  <% @cart.line_items.each do |item| %>
+    <li><%= item.article.title %></li>
+  <% end %>
 </ul>
 

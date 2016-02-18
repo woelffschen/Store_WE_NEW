@@ -20,7 +20,6 @@ before_action :authenticate_user!, except: [:index]
     else
       cart[id] = 1
     end
-
     redirect_to :action => :index
   end
 

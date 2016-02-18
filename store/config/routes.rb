@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :line_items
+  resources :orders
   root 'welcome#index'
   resources :articles
 
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id' => 'cart#add'
+
+  get '/order' => 'order#index'
 
 
 
