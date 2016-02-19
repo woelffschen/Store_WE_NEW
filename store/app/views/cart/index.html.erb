@@ -25,7 +25,6 @@
     <p> <%= image_tag(article.image_url, :class => "img-responsive", :size => "150x50")%> </p>
     <p> Price: <%= number_to_currency(article.price, :unit => '€') %> </p>
     <p> Quantity: <%= quantity %> </p>
-    <%= link_to 'Delete', cart_clear_path  %>
   </ul>
 
   <% total += quantity * article.price %>

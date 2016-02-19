@@ -16,6 +16,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><%= link_to "Welcome", root_path %></li></li>
         <li class="active"><%= link_to "Articles", articles_path %><span class="sr-only">(current)</span></a></li>
+        <li><%= link_to "Wishlist", wishlist_path %></li>
         <% if current_user.try(:admin?) %>
         <li><a>Admin</a></li>
         <% end %>

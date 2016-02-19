@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id' => 'cart#add'
 
+  get '/wishlist' => 'wishlist#index'
+  get '/wishlist/clear' => 'wishlist#clearWishlist'
+  get '/wishlist/:id' => 'wishlist#add'
+
+
   get '/order' => 'order#index'
 
 end
