@@ -2,15 +2,16 @@
     <h2><%= link_to 'New Article', new_article_path %></h2>
 <% end %>
 
-<%# @article_list.each do |category, article| %>
-    <%#= category %>
-    <%# article.each do |article| %>
-        <%#= article.title %>
-        <%# end %>
-    <%# end %>
+<h1>Listing Articles</h1><br>
 
-
-<h1>Listing Articles</h1>
+<div calss ="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle="dropdown">
+    choose category <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li> <%#= category.name  %> </li>
+  </ul>
+</div><br>
 
   <div class="row">
     <% @articles.each do |article| %>

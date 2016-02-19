@@ -3,31 +3,43 @@
 <% if @cart.empty? %>
     <p>Your cart is currently empty. Please insert some articles.</p>
 <% else %>
-    <%= link_to 'Empty your Cart', cart_clear_path %>
+    <h3><%= link_to 'Empty your Cart', cart_clear_path %></h3>
 <% end %>
 
-<br><br><br>
+<br><br>
 
 <% total = 0 %>
 
-<ul>
+<div class="row">
+
 <% @cart.each do | id, quantity | %>
+
+<div class="col-sm-4 col-md-4">
+  <div class="thumbnail">
+
   <% article = Article.find_by_id(id) %>
 
-  <li>
+  <ul>
     <h3><%= link_to article.title, article %></h3>
     <p> Description: <%= article.description %></p>
     <p> <%= image_tag(article.image_url, :class => "img-responsive", :size => "150x50")%> </p>
     <p> Price: <%= number_to_currency(article.price, :unit => '€') %> </p>
     <p> Quantity: <%= quantity %> </p>
-  </li>
+    <%= link_to 'Delete', cart_clear_path  %>
+  </ul>
+
   <% total += quantity * article.price %>
 
+  </div>
+</div>
 <% end %>
+
+</div>
 
 <br>
 <p><b> Total: <%= number_to_currency(total, :unit => '€') %> </b></p>
 
-</ul>
+<br>
 
+<h3><%= link_to 'Back to articles', articles_path %></h3>
 

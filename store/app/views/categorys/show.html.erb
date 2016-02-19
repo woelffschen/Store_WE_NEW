@@ -1,0 +1,6 @@
+<h3> Articles under this category </h3>
+
+<% Article.where(category_id: @category_id).each do |article| %>
+    <li> <%= article.title %></li>
+<% end %>
+

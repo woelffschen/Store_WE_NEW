@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
 
-  belongs_to :artcat
+  belongs_to :category
 
 
   default_scope { where(active: true)}

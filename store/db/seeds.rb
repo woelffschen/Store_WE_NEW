@@ -1,23 +1,31 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
+# Category
+Category.delete_all
+Category.create(:name => "small dogs")
+Category.create(:name => "medium dogs")
+Category.create(:name => "tall dogs")
+
+#categories = Category.create([{name: 'small dogs'}, {name: 'medium dogs'}, {name: 'tall dogs'}])
+
 # Articles
 Article.delete_all
 
 Article.create(:title => 'Ball',
                :description =>
                    %{small dogs},
-               :category => 'Katze',
+               #category.select(categories) => where(categories.id = 1),
                :image_url =>   'http://katzenzubehor.tk/Spielzeug%20fur%20hunde1.jpg',
                :colour => 1,
                :size => 2,
                :price => 5.50,
-              :active => true)
+               :active => true)
 # . . .
 Article.create(:title => 'Frisbee',
                :description =>
                    %{big dogs},
-               :category => 'Hund',
+               #category.select(categories) => where(categories.id = 1),
                :image_url => 'http://hahasforhoohas.com/wp-content/uploads/frisbee.jpg',
                :colour => 2,
                :size => 3,
@@ -27,7 +35,7 @@ Article.create(:title => 'Frisbee',
 Article.create(:title => 'Bone',
                :description =>
                    %{feed},
-               :category => 'großer Hund',
+               #category.select(categories) => where(categories.id = 1),
                :image_url => 'https://www.schecker.de/$WS/schecker/websale8_shop-schecker/produkte/medien/bilder/gross/059204_1548.jpg',
                :colour => 0,
                :size => 4,

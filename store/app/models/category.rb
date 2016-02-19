@@ -1,4 +1,3 @@
 class Category < ActiveRecord::Base
-  has_many :artcats
-  has_many :articles, through: :artcats
+  has_many :articles
 end

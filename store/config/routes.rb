@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+
   root 'welcome#index'
   resources :articles
+  resources :category
 
   devise_for :users
 
@@ -10,7 +12,5 @@ Rails.application.routes.draw do
   get '/cart/:id' => 'cart#add'
 
   get '/order' => 'order#index'
-
-
 
 end

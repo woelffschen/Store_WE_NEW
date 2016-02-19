@@ -21,7 +21,8 @@
   </div>
   <div class="field">
     <%= f.label :category %><br>
-    <%= f.text_field :category %>
+    <!-- Neuer Versuch Category einzubinden mit Dropdown -->
+  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select one!") %>
   </div>
   <div class="field">
     <%= f.label :image_url %><br>
