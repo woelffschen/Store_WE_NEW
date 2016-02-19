@@ -32,13 +32,20 @@ RSpec.feature 'Sign up',
       fill_in 'article_price', with: '2.50'
       click_button 'Create Article'
       expect(page).to have_content 'Testobjekt'
-    end
 
-    scenario 'destroy article' do
+
+    #scenario 'destroy article' do
       visit articles_path
       click_link 'Destroy'
-      click_button 'OK'
+    end
+
+      scenario 'd' do
+      page.accept_confirm do
+        click_button 'OK'
       expect(page).to have_content 'destroyed'
+      end
+
+
     end
 
   end

@@ -35,6 +35,33 @@ Article.create(:title => 'Bone',
 
 
 # User
-User.create({"email"=>"admin@toys.de", "password"=>"12345678", "admin"=>"true", "first_name"=>"Admin"})
-User.create({"email"=>"ines@toys.de", "password"=>"12345678", "admin"=>"false", "first_name"=>"Ines"})
-User.create({"email"=>"sylvia@toys.de", "password"=>"12345678", "admin"=>"false", "first_name"=>"Sylvia"})
+User.create({"email"=>"admin@toys.de",
+             "password"=>"12345678",
+             "admin"=>"true",
+             "first_name"=>"Admin",
+              "last_name"=>"Master",
+              "street"=>"Musterstraße",
+              "number"=>"1",
+              "postel_code"=>"12345",
+              "city"=>"Münster"})
+
+User.create({"email"=>"ines@toys.de",
+             "password"=>"12345678",
+             "admin"=>"false",
+             "first_name"=>"Ines",
+             "last_name"=>"Master",
+             "street"=>"Musterstraße",
+             "number"=>"2",
+             "postel_code"=>"12345",
+             "city"=>"Münster"})
+
+
+User.create({"email"=>"sylvia@toys.de",
+             "password"=>"12345678",
+             "admin"=>"false",
+             "first_name"=>"Sylvia",
+             "last_name"=>"Master",
+             "street"=>"Musterstraße",
+             "number"=>"3",
+             "postel_code"=>"12345",
+             "city"=>"Münster"})
