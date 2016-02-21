@@ -3,11 +3,9 @@
 
 # Category
 Category.delete_all
-Category.create(:name => "small dogs")
-Category.create(:name => "medium dogs")
-Category.create(:name => "tall dogs")
-
-#categories = Category.create([{name: 'small dogs'}, {name: 'medium dogs'}, {name: 'tall dogs'}])
+cat1 = Category.create(:name => "small dogs")
+cat2 = Category.create(:name => "medium dogs")
+cat3 = Category.create(:name => "tall dogs")
 
 # Articles
 Article.delete_all
@@ -15,7 +13,7 @@ Article.delete_all
 Article.create(:title => 'Ball',
                :description =>
                    %{small dogs},
-               #category.select(categories) => where(categories.id = 1),
+               :category => cat1,
                :image_url =>   'http://katzenzubehor.tk/Spielzeug%20fur%20hunde1.jpg',
                :colour => 1,
                :size => 2,
@@ -25,7 +23,7 @@ Article.create(:title => 'Ball',
 Article.create(:title => 'Frisbee',
                :description =>
                    %{big dogs},
-               #category.select(categories) => where(categories.id = 1),
+               :category => cat2,
                :image_url => 'http://hahasforhoohas.com/wp-content/uploads/frisbee.jpg',
                :colour => 2,
                :size => 3,
@@ -35,7 +33,7 @@ Article.create(:title => 'Frisbee',
 Article.create(:title => 'Bone',
                :description =>
                    %{feed},
-               #category.select(categories) => where(categories.id = 1),
+               :category => cat3,
                :image_url => 'https://www.schecker.de/$WS/schecker/websale8_shop-schecker/produkte/medien/bilder/gross/059204_1548.jpg',
                :colour => 0,
                :size => 4,

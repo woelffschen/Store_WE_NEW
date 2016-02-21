@@ -1,7 +1,8 @@
 class Article < ActiveRecord::Base
 
-  belongs_to :category
+  scope :category, -> (category) {where category: category}
 
+  belongs_to :category
 
   default_scope { where(active: true)}
 
