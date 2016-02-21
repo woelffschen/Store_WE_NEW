@@ -2,7 +2,7 @@ class CartController < ApplicationController
 
 # Authentification needed for adding articles into shopping cart
 
-before_action :authenticate_user!, except: [:index]
+#before_action :authenticate_user!, except: [:index]
   def add
     id = params[:id]
 
@@ -35,10 +35,6 @@ before_action :authenticate_user!, except: [:index]
     else
       @cart = {}
     end
-  end
-
-  def nur_in_order_nicht_in_test
-
   end
 
 end
