@@ -5,41 +5,36 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     if params[:category].present?
-    @articles = Article.category(params[:category])
+      @articles = Article.category(params[:category])
     else
       @articles = Article.all
     end
-    @categories = Category.all
-    #@categories = Category.all.map {|c| [c.name, c.id]}
+      @categories = Category.all
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
-    #@categories = Category.all.map {|c| [c.name, c.id]}
-
   end
 
   # GET /articles/new
   def new
     @article = Article.new
-    #neuer Versuch Category einzubinden
     @categories = Category.all.map {|c| [c.name, c.id]}
   end
 
   # GET /articles/1/edit
   def edit
-    #um Category einzubinden
     @categories = Category.all.map {|c| [c.name, c.id]}
   end
 
   # POST /articles
   # POST /articles.json
   def create
-    #@categories = Category.all.map {|c| [c.name, c.id]}
+    @categories = Category.all.map {|c| [c.name, c.id]}
     @article = Article.new(article_params)
-    #um Category einzubinden
     @article.category_id = params[:category_id]
+
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
@@ -54,8 +49,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
-    #@categories = Category.all.map {|c| [c.name, c.id]}
-    #um Category einzubinden
+    @categories = Category.all.map {|c| [c.name, c.id]}
     @article.category_id = params[:category_id]
 
     respond_to do |format|
@@ -72,7 +66,6 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
-    #@categories = Category.all.map {|c| [c.name, c.id]}
     @article.destroy
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
@@ -88,7 +81,7 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :description, :image_url, :colour, :size, :price, :category_id)
+      params.require(:article).permit(:title, :description, :category, :image_url, :colour, :size, :price)
     end
 
 

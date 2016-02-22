@@ -7,9 +7,9 @@ RSpec.feature 'Sign in',
   context 'at start page' do
 
     context 'at new article' do
-      let(:article) { FactoryGirl.create(:article)}
 
       before(:each) do
+        load Rails.root + "db/seeds.rb"
         visit root_path
         click_link 'Sign in'
         fill_in 'user_email', with: 'admin@toys.de'
@@ -28,7 +28,7 @@ RSpec.feature 'Sign in',
 
     scenario 'add article to cart' do
       visit articles_path
-      click_on 'Add to cart'
+      first(:button, 'Add to cart').click
       expect(page).to have_content "shopping cart"
     end
 

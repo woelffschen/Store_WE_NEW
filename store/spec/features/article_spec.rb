@@ -5,9 +5,9 @@ RSpec.feature 'Sign up',
               I want to sign up
               so that I can manage the articles' do
   context 'at new article' do
-      let(:article) { FactoryGirl.create(:article) }
 
-      scenario 'sign in' do
+      before(:each) do
+        load Rails.root + "db/seeds.rb"
         visit root_path
         click_link 'Sign in'
         fill_in 'user_email', with: 'admin@toys.de'
