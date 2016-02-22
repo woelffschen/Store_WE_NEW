@@ -22,8 +22,7 @@
 
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select one!") %>
-    <!-- <#%= f.select(:category_id, Category.all.map{ |c| [c.name, c.id]} %> -->
+    <%= select_tag(:category_id, options_for_select(@categories)) %>
   </div>
 
   <div class="field">
@@ -32,11 +31,11 @@
   </div>
   <div class="field">
     <%= f.label :colour %><br>
-    <%= f.text_field :colour %>
+    <%= f.select :colour, Article.colours.keys %>
   </div>
   <div class="field">
     <%= f.label :size %><br>
-    <%= f.text_field :size %>
+    <%= f.select :size, Article.sizes.keys %>
   </div>
   <div class="field">
     <%= f.label :price %><br>

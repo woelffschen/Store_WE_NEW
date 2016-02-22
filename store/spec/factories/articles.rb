@@ -1,11 +1,16 @@
 FactoryGirl.define do
   factory :article do
-    title "MyString"
-description "MyText"
-image_url "MyString"
-colour 1
-size 1
-price "9.99"
-  end
+    User.create({"email"=>"admin@toys.de",
+                 "password"=>"12345678",
+                 "first_name"=>"Admin",
+                 "last_name"=>"Master",
+                 "street"=>"Musterstraße",
+                 "number"=>"1",
+                 "postel_code"=>"12345",
+                 "city"=>"Münster",
+                 "admin"=>"true"})
 
+    Category.create(:name => "test category")
+  end
 end
+

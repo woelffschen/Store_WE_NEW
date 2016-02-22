@@ -5,18 +5,7 @@ RSpec.feature 'Sign up',
               I want to sign up
               so that I can manage the articles' do
   context 'at new article' do
-
-      before(:each) do
-        User.create({"email"=>"admin@toys.de",
-                     "password"=>"12345678",
-                     "first_name"=>"Admin",
-                     "last_name"=>"Master",
-                     "street"=>"Musterstraße",
-                     "number"=>"1",
-                     "postel_code"=>"12345",
-                     "city"=>"Münster",
-                     "admin"=>"true"})
-      end
+      let(:article) { FactoryGirl.create(:article) }
 
       scenario 'sign in' do
         visit root_path

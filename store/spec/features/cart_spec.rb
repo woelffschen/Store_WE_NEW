@@ -7,17 +7,9 @@ RSpec.feature 'Sign in',
   context 'at start page' do
 
     context 'at new article' do
-      before(:each) do
-        User.create({"email"=>"admin@toys.de",
-                     "password"=>"12345678",
-                     "first_name"=>"Admin",
-                     "last_name"=>"Master",
-                     "street"=>"Musterstraße",
-                     "number"=>"1",
-                     "postel_code"=>"12345",
-                     "city"=>"Münster",
-                     "admin"=>"true"})
+      let(:article) { FactoryGirl.create(:article)}
 
+      before(:each) do
         visit root_path
         click_link 'Sign in'
         fill_in 'user_email', with: 'admin@toys.de'
@@ -37,7 +29,7 @@ RSpec.feature 'Sign in',
     scenario 'add article to cart' do
       visit articles_path
       click_on 'Add to cart'
-      expect(page).to have_content "Shopping Cart"
+      expect(page).to have_content "shopping cart"
     end
 
   end

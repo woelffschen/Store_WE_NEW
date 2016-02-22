@@ -3,6 +3,7 @@
 
 # Category
 Category.delete_all
+Category.create(:name => "no category")
 cat1 = Category.create(:name => "small dogs")
 cat2 = Category.create(:name => "medium dogs")
 cat3 = Category.create(:name => "tall dogs")
