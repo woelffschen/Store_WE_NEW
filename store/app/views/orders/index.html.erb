@@ -1,0 +1,83 @@
+<h1> Your order </h1>
+
+<br>
+
+<h4><strong> delivery address </strong></h4>
+<address>
+ <p><%= current_user.first_name %>
+    <%= current_user.last_name %> </p>
+ <p><%= current_user.street %>
+    <%= current_user.number %> <p>
+ <p><%= current_user.postel_code %>
+    <%= current_user.city %> </p>
+</address>
+
+<br>
+
+<table class="table table-striped">
+  <thead>
+  <th>Article</th>
+  <th>Colour</th>
+  <th>Size</th>
+  <th>Quantity</th>
+  <th>Unit price</th>
+  <th>Total</th>
+  </thead>
+
+  <% @cart.order_items.each do |item| %>
+      <tr>
+        <td><%= item.article.title %></td>
+        <td><%= item.article.colour %></td>
+        <td><%= item.article.size%></td>
+        <td><%= item.quantity %></td>
+        <td><%= number_to_currency(item.article.price, unit: "€", seperator: ".") %></td>
+        <td><%= number_to_currency(item.total_price, unit: "€", seperator: ".") %></td>
+      </tr>
+  <%end%>
+  <tr>
+    <td><strong>Total:</strong></td>
+    <td colspan="4"></td>
+    <td><strong><%= number_to_currency(@cart.total_price, unit: "€", seperator: ".") %></strong></td>
+  </tr>
+</table>
+
+  <br>
+
+<div class="row">
+  <div class="col-sm-4">
+  <h4><strong> payment </strong></h4>
+  <div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    creditcard
+  </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+      bill
+    </label>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+  <h4><strong> shipping method </strong></h4>
+  <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios2" id="optionsRadios3" value="option3" checked>
+      normal
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios2" id="optionsRadios4" value="option4">
+      express
+    </label>
+  </div>
+  </div>
+</div>
+
+<br>
+
+<p><a href="/orders/end" class="btn btn-primary" role="button"> buy </a></p>
+

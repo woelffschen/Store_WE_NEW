@@ -11,12 +11,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-
-  get '/wishlist' => 'wishlist#index'
-  get '/wishlist/clear' => 'wishlist#clearWishlist'
-  get '/wishlist/:id' => 'wishlist#add'
-
-
-  get '/order' => 'order#index'
+  get 'orders' => 'orders#index'
+  get 'orders/end' => 'orders#show'
 
 end

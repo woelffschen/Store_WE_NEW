@@ -27,8 +27,7 @@
               <p> Description: <%= truncate(strip_tags(article.description))%></p>
               <p> Size: <%= article.size %></p>
               <p> Colour: <%= article.colour %></p>
-              <p> <%= button_to 'Add to cart', order_items_path(:article_id => article, :quantity => 1) %>
-                  <a href="/wishlist/<%=article.id%>" class="btn btn-primary" role="button"> Add to wishlist</a></p>
+              <p> <%= button_to 'Add to cart', order_items_path(:article_id => article, :quantity => 1) %></p>
               <p>
                 <% if current_user.try(:admin?) %>
                 <%= link_to 'Edit', edit_article_path(article) %>

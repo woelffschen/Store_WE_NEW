@@ -1,12 +1,8 @@
 class CartController < ApplicationController
+  include CurrentCart
 
-  def show
-    begin
-      @cart = Cart.find(session[:cart_id])
-    rescue ActiveRecord::RecordNotFound
-      logger.error "Attempt to access invalid cart #{params[:id]}"
-
+  before_action :set_cart
+    def show
     end
-  end
 
 end

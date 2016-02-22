@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "orders/show", type: :view do
   before(:each) do
-    @order = assign(:order, Order.create!(
+    @order = assign(:orders, Order.create!(
       :name => "Name",
       :address => "MyText",
       :email => "Email",
