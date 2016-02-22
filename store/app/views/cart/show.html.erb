@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+  <th>Article</th>
+  <th>Colour</th>
+  <th>Size</th>
+  <th>Quantity</th>
+  <th>Unit price</th>
+  <th>Total</th>
+  </thead>
+
+<% @cart.order_items.each do |item| %>
+      <tr>
+      <td><%= item.article.title %></td>
+      <td><%= item.article.colour %></td>
+      <td><%= item.article.size%></td>
+      <td><%= item.quantity %></td>
+      <td><%= number_to_currency(item.article.price, unit: "€", seperator: ".") %></td>
+      <td><%= number_to_currency(item.total_price, unit: "€", seperator: ".") %></td>
+      </tr>
+<%end%>
+<tr>
+  <td><strong>Total:</strong></td>
+  <td colspan="4"></td>
+  <td><strong><%= number_to_currency(@cart.total_price, unit: "€", seperator: ".") %></strong></td>
+</tr>
+
+</table>
+<%= button_to 'Empty Cart', @cart, :method => :delete, :confirm => 'Are you sure?' %>

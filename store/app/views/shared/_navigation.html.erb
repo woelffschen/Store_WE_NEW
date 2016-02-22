@@ -17,18 +17,10 @@
         <li class="active"><%= link_to "Welcome", root_path %></li></li>
         <li class="active"><%= link_to "Articles", articles_path %><span class="sr-only">(current)</span></a></li>
         <li><%= link_to "Wishlist", wishlist_path %></li>
-        <% if current_user.try(:admin?) %>
-        <li><a>Admin</a></li>
-        <% end %>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
 
         <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Cart", cart_path %></li>
           <% if user_signed_in? %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <%= current_user.first_name %> <span class="caret"></span></a>

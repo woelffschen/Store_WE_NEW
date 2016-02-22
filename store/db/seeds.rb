@@ -25,7 +25,7 @@ Article.create(:title => 'Frisbee',
                    %{big dogs},
                :category => cat2,
                :image_url => 'http://hahasforhoohas.com/wp-content/uploads/frisbee.jpg',
-               :colour => 2,
+               :colour => 0,
                :size => 3,
                :price => 3.95,
                :active => true)

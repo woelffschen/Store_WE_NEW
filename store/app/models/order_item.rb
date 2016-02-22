@@ -1,4 +1,8 @@
 class OrderItem < ActiveRecord::Base
-  has_one :article
-  belongs_to :order
+  belongs_to :article
+  belongs_to :cart
+
+  def total_price
+    article.price * quantity
+  end
 end

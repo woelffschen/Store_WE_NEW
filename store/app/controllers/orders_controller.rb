@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   def create
     if session[:cart]
      cart = session[:cart]
-    orderItems =
+    orderItems = OrderItem.create(:quantity => cart)
     @order = Order.create(:orderdate => Date.today)
     else
 
