@@ -1,0 +1,38 @@
+ONLINESHOP
+This is an example for in easy structured onlineshop with following features:
+•	User registration (sign in, sign up, edit profile and delete profile)
+•	Article management (create, read, update, destroy)
+•	Fill Shopping cart with articles
+•	Fake Payment and Delivery options
+
+To run our application please note following:
+•	Ruby version
+  o	Ruby 2.2.2p95
+
+•	Database creation & initailization
+  o	Command line, rake db:reset
+
+o	Automatically initialize of:
+  + Admin
+  •	admin@toys.de, password: 12345678
+  + User
+  •	ines@toys.de, password: 12345678
+  •	sylvia@toys.de, password: 12345678
+  + 3 examples of Articles
+  •	Ball
+  •	Frisbee
+  •	Bone
+
+•	How to run the test suite
+o	Command line, bundle exec rspec spec/features/xxx_spec.rb
++ Please exchange xxx with: 
+  •	signIn (includes signOut)
+  •	singUp
+  •	cart
+  •	empty_cart
+  •	article
+  •	edit_article and destroy_article
+
+•	Deployment instructions
+o	GitHub
+o	Heroku
