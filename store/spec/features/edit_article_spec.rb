@@ -1,9 +1,10 @@
 require 'rails_helper'
 
-RSpec.feature 'Sign up',
+RSpec.feature 'edit article',
               'As a Admin,
-              I want to sign up
-              so that I can manage the articles' do
+              I want to sign in
+              so that I can edit articles' do
+
   context 'at new article' do
 
     before(:each) do
@@ -21,14 +22,14 @@ RSpec.feature 'Sign up',
       fill_in 'article_description', with: 'erfolgreich'
       fill_in 'article_image_url', with: 'bild.jpg'
       fill_in 'article_price', with: '2.50'
-      click_button 'Create Article'
+      click_button 'Save Article'
       expect(page).to have_content 'Testobjekt'
     end
 
     scenario 'edit article' do
        click_link 'Edit'
        fill_in 'article_title', with: 'NEUES'
-       click_button 'Update Article'
+       click_button 'Save Article'
        expect(page).to have_content 'NEUES'
     end
 

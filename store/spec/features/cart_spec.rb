@@ -1,12 +1,11 @@
 require 'rails_helper'
 
-RSpec.feature 'Sign in',
-              'As a registered "user",
+RSpec.feature 'add to cart',
+              'As a user,
               I want to sign in
-              so that I can manage my own account' do
-  context 'at start page' do
+              so that I can add articles to cart' do
 
-    context 'at new article' do
+  context 'at start page' do
 
       before(:each) do
         load Rails.root + "db/seeds.rb"
@@ -17,13 +16,6 @@ RSpec.feature 'Sign in',
         click_button 'Sign in'
         expect(page).to have_content 'Hello, Admin'
 
-        visit new_article_path
-        fill_in 'article_title', with: 'Testobjekt'
-        fill_in 'article_description', with: 'erfolgreich'
-        fill_in 'article_image_url', with: 'bild.jpg'
-        fill_in 'article_price', with: '2.50'
-        click_button 'Create Article'
-        expect(page).to have_content 'Testobjekt'
     end
 
     scenario 'add article to cart' do
@@ -32,7 +24,6 @@ RSpec.feature 'Sign in',
       expect(page).to have_content "shopping cart"
     end
 
-  end
   end
 end
 

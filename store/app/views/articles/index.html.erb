@@ -31,7 +31,7 @@
               <p>
                 <% if current_user.try(:admin?) %>
                   <p><%= link_to 'Edit', edit_article_path(article) %> &nbsp &nbsp
-                     <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                     <%= link_to 'Destroy', article, method: :delete %></p>
                 <% end %>
               </p>
             </div>
