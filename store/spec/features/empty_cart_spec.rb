@@ -8,15 +8,7 @@ RSpec.feature 'Sign in',
 
     context 'at new article' do
       before(:each) do
-        User.create({"email"=>"admin@toys.de",
-                     "password"=>"12345678",
-                     "first_name"=>"Admin",
-                     "last_name"=>"Master",
-                     "street"=>"Musterstraße",
-                     "number"=>"1",
-                     "postel_code"=>"12345",
-                     "city"=>"Münster",
-                     "admin"=>"true"})
+        load Rails.root + "db/seeds.rb"
 
         visit root_path
         click_link 'Sign in'
@@ -34,14 +26,14 @@ RSpec.feature 'Sign in',
         expect(page).to have_content 'Testobjekt'
 
         visit articles_path
-        click_on 'Add to cart'
-        expect(page).to have_content "Shopping Cart"
+        first(:button, 'Add to cart').click
+        expect(page).to have_content "shopping cart"
       end
 
       scenario 'empty shopping cart' do
         visit cart_path
-        click_on 'Empty your Cart'
-        expect(page).to have_content "currently empty"
+        click_on 'Empty Cart'
+        expect(page).to have_content "€0.00"
       end
     end
   end

@@ -20,18 +20,18 @@
     <% @articles.each do |article| %>
 
         <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
+          <div class="thumbnail" >
             <td><%= image_tag(article.image_url, :class => "img-responsive")%></td>
             <div class="caption">
               <h3><%= link_to article.title, article %></h3>
               <p> Description: <%= truncate(strip_tags(article.description))%></p>
               <p> Size: <%= article.size %></p>
               <p> Colour: <%= article.colour %></p>
-              <p> <%= button_to 'Add to cart', order_items_path(:article_id => article, :quantity => 1) %></p>
+              <p> <%= button_to('Add to cart', order_items_path(:article_id => article, :quantity => 1),:class=>'btn btn-primary') %></p>
               <p>
                 <% if current_user.try(:admin?) %>
-                <%= link_to 'Edit', edit_article_path(article) %>
-                <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <p><%= link_to 'Edit', edit_article_path(article) %> &nbsp &nbsp
+                     <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></p>
                 <% end %>
               </p>
             </div>

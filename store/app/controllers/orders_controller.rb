@@ -19,6 +19,12 @@ class OrdersController < ApplicationController
     end
   end
 
+  def delete
+    session[:cart_id] = nil
+    redirect_to orders_end_path
+  end
+
+
   private
 
   def order_params

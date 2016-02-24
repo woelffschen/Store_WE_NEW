@@ -27,7 +27,15 @@
 </tr>
 
 </table>
-<%= button_to 'Empty Cart', cart_bye_path, :method => :delete, :confirm => 'Are you sure?' %>
 
-<p><a href="/orders" class="btn btn-primary" role="button"> Checkout </a></p>
+<% @cart = Cart.find(session[:cart_id]) %>
 
+<% if @cart.order_items.count <= 0 %>
+<% else %>
+  <p><%= button_to('Empty Cart', cart_end_path, :class=>'btn btn-primary', :method => :delete, :confirm => 'Are you sure?') %></p><br>
+  <p><a href="/orders" class="btn btn-primary" role="button"> Checkout </a></p>
+<% end %>
+
+<br>
+
+<h3><%= link_to 'Back', articles_path %></h3>
