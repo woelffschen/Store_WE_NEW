@@ -1,5 +1,5 @@
 ONLINESHOP
-This is an example for in easy structured onlineshop with following features:
+This is an example for an easy structured onlineshop with following features:
 •	User registration (sign in, sign up, edit profile and delete profile)
 •	Article management (create, read, update, destroy)
 •	Fill Shopping cart with articles
@@ -7,7 +7,7 @@ This is an example for in easy structured onlineshop with following features:
 
 To run our application please note following:
 •	Ruby version
-  o	Ruby 2.2.2p95
+  o	Ruby 2.2.2
 
 •	Database creation & initailization
   o	Command line, rake db:reset
@@ -33,6 +33,6 @@ o	Command line, bundle exec rspec spec/features/xxx_spec.rb
   •	article
   •	edit_article and destroy_article
 
-•	Deployment instructions
-o	GitHub
+•	You will find our example on:
 o	Heroku
+  https://warm-basin-26837.herokuapp.com
