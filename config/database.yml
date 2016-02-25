@@ -16,6 +16,7 @@ development:
   reconnect: false
   database: development
   pool: 5
+  timeout: 5000
   username: root
   password: we2
 #  socket: /var/run/mysqld/mysqld.sock
@@ -38,7 +39,10 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
+  reconnect: false
   database: production
+  pool: 5
+  timeout: 5000
   username: root
   password: we2
 #  socket: /var/run/mysqld/mysqld.sock
