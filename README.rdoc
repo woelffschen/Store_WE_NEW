@@ -9,8 +9,8 @@ To run our application please note following:
 •	Ruby version
   o	Ruby 2.2.2
 
-•	Database creation & initailization
-  o	Command line, rake db:reset
+•	Creation & initailization
+  o	make sure that you have installed PostgreSQL and all required gems
 
 o	Automatically initialize of:
   + Admin
