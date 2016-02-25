@@ -10,7 +10,7 @@ To run our application please note following:
   o	Ruby 2.2.2
 
 •	Creation & initailization
-  o	make sure that you have installed PostgreSQL and all required gems
+  o	make sure that you have installed PostgreSQL and all required gems from our gemfile
 
 o	Automatically initialize of:
   + Admin
