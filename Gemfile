@@ -71,7 +71,9 @@ group :development do
   gem 'spring'
 end
 
-
+# Heroku
 group :production do
   gem 'rails_12factor'
 end
+
+gem 'rails_serve_static_assets'
