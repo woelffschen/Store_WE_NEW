@@ -219,8 +219,10 @@ GEM
     sprockets-rails (3.0.2)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
+      libv8 (~> 3.16.14.0)
+      ref
       sprockets (>= 3.0.0)
-     therubyracer (0.12.2)
+    therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
     thor (0.19.1)
@@ -269,7 +271,6 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
-  sqlite3
   therubyracer
   turbolinks
   twitter-bootstrap-rails
